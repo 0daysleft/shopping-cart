@@ -200,4 +200,42 @@ nav .cart-icon .cart-item-count{
     margin: 3px 0;
 }
 
+/* Cart Section */
 
+.cart{
+    padding: 110px 9% 30px;
+}
+
+.cart-header{
+    display: flex;
+    padding: 10px 0;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-header span{
+    flex: 1;
+    text-align: center;
+}
+
+.cart-header span:first-child{
+    flex: 2;
+    text-align: left;
+}
+
+.cart-item{
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-item .product{
+    display: flex;
+    align-items: center;
+    flex: 2;
+}
+
+.cart-item img{
+    width: 80px;
+}
