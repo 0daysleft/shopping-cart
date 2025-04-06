@@ -3,6 +3,11 @@ const productContainer = document.querySelector(".product-list");
 const isProductDetailsPage = document.querySelector(".product-detail")
 const isCartPage = document.querySelector(".cart");
 
+// noOfItemInCart = (JSON.parse(sessionStorage.getItem("cart")) || []).length;
+
+// document.querySelector(".cart-item-count").textContent = noOfItemInCart;
+// document.querySelector(".cart-item-count").style.display = "block"
+
 function displayProducts(){
     products.forEach(product => {
 
@@ -115,6 +120,7 @@ const displayProductDetail = () => {
     updateProductDisplay(selectedColor);
 
     addToCartBtn.addEventListener('click', () => {
+        //noOfItemInCart ++;
         addToCart(productData, selectedColor, selectedSize);
     })
 }
@@ -154,6 +160,7 @@ function addToCart(product, color, size){
     }
 
     sessionStorage.setItem("cart", JSON.stringify(cart));
+    updateCartBadge()
 }
 
 
@@ -164,9 +171,6 @@ function displayCart(){
     const cartItemsContainer = document.querySelector(".cart-items");
     const subTotalE1 = document.querySelector(".subtotal");
     const grandTotalE1 = document.querySelector(".grand-total");
-
-    //console.log(cart)
-    
 
     cartItemsContainer.innerHTML = "";
 
@@ -200,13 +204,12 @@ function displayCart(){
                 </div>
             </div>
             <span class="price">${item.price}</span>
-            <div class="quantity"><input type="number" name="" id="" value="${item.quantity}" min="1" data-index="${index}"></div>
+            <div class="quantity"><input type="number" name="" id="" value="${item.quantity}" min="1" max='999' data-index="${index}"></div>
             <span class="total-price">$${itemTotal}</span>
             <button class="remove" data-index="${index}" ><i class="ri-close-line"></i></button>
         `
             
             cartItemsContainer.append(cartItem)
-            console.log(item)
         }
     )
 
@@ -222,11 +225,11 @@ function removeCartItem() {
     document.querySelectorAll(".remove").forEach(button => {
         button.addEventListener("click", function () {
             let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
-
             const index = this.getAttribute("data-index");
             cart.splice(index, 1);
             sessionStorage.setItem("cart", JSON.stringify(cart));
             displayCart();
+            updateCartBadge();
         })
     })
 }
@@ -239,6 +242,24 @@ function updateCartQuantity() {
             cart[index].quantity = parseInt(this.value);
             sessionStorage.setItem("cart", JSON.stringify(cart));
             displayCart();
+            updateCartBadge();
         })
     })
 }
+
+
+function updateCartBadge(){
+        const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+        const cartCount = cart.reduce((total, item) => total + item.quantity, 0 );
+        const badge = document.querySelector(".cart-item-count");
+
+        if(badge){
+            badge.textContent = cartCount;
+            badge.style.display = "block"
+        }
+        else{
+            badge.style.display = "none"
+        }
+}
+
+updateCartBadge();
