@@ -40,7 +40,7 @@ const displayProductDetail = () => {
     const priceE1 = document.querySelector(".price");
     const descriptionE1 = document.querySelector(".description");
     const mainImageContainer = document.querySelector(".main-img");
-    const thumbnailContainer = document.querySelector(".thubnail-list");
+    const thumbnailContainer = document.querySelector(".thumbnail-list");
     const colorContainer = document.querySelector(".color-options");
     const sizeContainer = document.querySelector(".size-options");
     const addToCarBtn = document.querySelector("#add-cart-btn");
@@ -65,7 +65,7 @@ const displayProductDetail = () => {
             thumbnailContainer.appendChild(img);
 
             img.addEventListener('click', () => {
-                mainImageContainer.innerHTML = `<img src="${thumb}/>`;
+                mainImageContainer.innerHTML = `<img src="${thumb}"/>`;
             })
         })
 
@@ -98,8 +98,7 @@ const displayProductDetail = () => {
                 sizeContainer.appendChild(btn);
 
                 btn.addEventListener('click', () => {
-                    document.querySelectorAll(".size-options button").forEach (
-                        el => el.classList.remove("selected"))
+                    document.querySelectorAll(".size-options button").forEach (el => el.classList.remove("selected"))
                         btn.classList.add("selected");
                         selectedSize = size
                 })
