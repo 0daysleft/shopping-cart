@@ -298,3 +298,13 @@ nav .cart-icon .cart-item-count{
     padding-bottom: 8px;
     margin-bottom: 8px;
 }
+
+.cart-total p:last-of-type{
+    font-weight: bold;
+}
+
+.cart-total .btn{
+    display: block;
+    padding: 12px 30px;
+    margin: 30px 0 0 auto;
+}
