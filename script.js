@@ -133,7 +133,7 @@ else if(isCartPage){
 function addToCart(product, color, size){
     let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
-    const existingItem = cart.find(item => item.id == product.id && item.color == color.name && color.size == size);
+    const existingItem = cart.find(item => item.id === product.id && item.color === color.name && item.size === size);
 
     if(existingItem){
         existingItem.quantity += 1;
@@ -146,6 +146,7 @@ function addToCart(product, color, size){
                 title: product.title,
                 price: product.price,
                 image: color.mainImage,
+                color: color.name,
                 size: size,
                 quantity: 1
             }
@@ -187,25 +188,25 @@ function displayCart(){
             cartItem.classList.add("cart-item");
             cartItem.innerHTML = 
 
-                                    `
-                                                <div class="product">
-                                                    <img src="${item.image}" alt="">
-                                                    <div class="item-detail">
-                                                        <p>${item.title}</p>
-                                                        <div class="size-color-box">
-                                                            <span class="size">${item.size}</span>
-                                                            <span class="color">${item.color}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <span class="price">${item.price}</span>
-                                                <div class="quantity"><input type="number" name="" id="" value="${item.quantity}" min="1" data-index="${index}"></div>
-                                                <span class="total-price">$${itemTotal}</span>
-                                                <button class="remove" data-index="${index}" ><i class="ri-close-line"></i></button>
-                                    `
+        `
+            <div class="product">
+                <img src="${item.image}" alt="">
+                <div class="item-detail">
+                    <p>${item.title}</p>
+                    <div class="size-color-box">
+                        <span class="size">${item.size}</span>
+                        <span class="color">${item.color}</span>
+                    </div>
+                </div>
+            </div>
+            <span class="price">${item.price}</span>
+            <div class="quantity"><input type="number" name="" id="" value="${item.quantity}" min="1" data-index="${index}"></div>
+            <span class="total-price">$${itemTotal}</span>
+            <button class="remove" data-index="${index}" ><i class="ri-close-line"></i></button>
+        `
             
             cartItemsContainer.append(cartItem)
-                   
+            console.log(item)
         }
     )
 
