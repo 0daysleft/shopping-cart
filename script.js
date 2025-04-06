@@ -125,3 +125,28 @@ if(productContainer){
 else if(isProductDetailsPage){
     displayProductDetail();
 }
+
+function addToCarBtn(product, color, size){
+    let cart = JSON.parse(sessionStorage.getItem("cart") || []);
+
+    const existingItem = cart.find(item => item.id == product.id && item.color == color.name && color.size == size);
+
+    if(existingItem){
+        existingItem.quantity += 1;
+    }
+
+    else{
+        cart.push(
+            {
+                id: product.id,
+                title: product.title,
+                price: product.price,
+                image: color.mainImage,
+                size: size,
+                quantity: 1
+            }
+        )
+    }
+
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+}
