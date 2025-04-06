@@ -185,7 +185,6 @@ function displayCart(){
             cartItem.innerHTML = 
 
                                     `
-                                             <div class="cart-item">
                                                 <div class="product">
                                                     <img src="${item.image}" alt="">
                                                     <div class="item-detail">
@@ -200,7 +199,6 @@ function displayCart(){
                                                 <div class="quantity"><input type="number" name="" id="" value="${item.quantity}" min="1" data-index="${index}"></div>
                                                 <span class="total-price">$100</span>
                                                 <button class="remove" data-index="${index}" ><i class="ri-close-line"></i></button>
-                                            </div>
                                     `
             cartItemsContainer.append(cartItem)
         }
