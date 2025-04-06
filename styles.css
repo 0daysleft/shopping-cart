@@ -99,6 +99,43 @@ nav .cart-icon .cart-item-count{
     margin-top: 5px;
 }
 
+.product-detail{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 130px 9% 30px;
+}
+
+.product-detail .product-img{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 12px;
+    height: 550px;
+}
+
+.product-detail .product-img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-detail .thumbnail-list{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.product-detail .thumbnail-list img{
+    height: calc(100%/ 4 - 9px);
+    cursor: pointer;
+}
+
+.product-detail .title{
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 8px;
+}
 
 
 
