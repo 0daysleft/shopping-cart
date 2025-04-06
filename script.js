@@ -2,13 +2,6 @@
 const productContainer = document.querySelector(".product-list");
 const isProductDetailsPage = document.querySelector(".product-detail")
 
-if(productContainer){
-    displayProducts();
-}
-else if(isProductDetailsPage){
-    displayProductDetail();
-}
-
 function displayProducts(){
     products.forEach(product => {
 
@@ -53,7 +46,7 @@ const displayProductDetail = () => {
     const addToCarBtn = document.querySelector("#add-cart-btn");
 
     let selectedColor = productData.colors[0]
-    let selectedSize = seletedColor.sizes[0]
+    let selectedSize = selectedColor.sizes[0]
 
     function updateProductDisplay(colorData){
         if(!colorData.sizes.includes(selectedSize)){
@@ -62,7 +55,7 @@ const displayProductDetail = () => {
 
         mainImageContainer.innerHTML = `<img src="${colorData.mainImage}"/>`;
 
-        thumbnailContainer.innerHTML = "";
+        thumbnailContainer.innerHTML = '';
 
         const allThumbnails = [colorData.mainImage].concat(colorData.thumbnails.slice(0, 3));
         allThumbnails.forEach(thumb => {
@@ -88,7 +81,7 @@ const displayProductDetail = () => {
 
                 img.addEventListener(
                     'click', () => {
-                        seletedColor = color;
+                        selectedColor = color;
                         updateProductDisplay(color);
                     }
                 )
@@ -124,4 +117,12 @@ const displayProductDetail = () => {
     addToCarBtn.addEventListener('click', () => {
         addToCarBtn(productData, selectedColor, selectedSize);
     })
+}
+
+
+if(productContainer){
+    displayProducts();
+}
+else if(isProductDetailsPage){
+    displayProductDetail();
 }
