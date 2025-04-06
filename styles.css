@@ -19,6 +19,7 @@ nav{
     width: 100%;
     padding: 20px 9%;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: rgb(181, 228, 210);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -82,6 +83,10 @@ nav .cart-icon .cart-item-count{
     transition: 0.5s;
 }
 
+.product-collection .img-box:hover img{
+    transform: scale(1.2);
+}
+
 .product-collection .title{
     font-size: 18px;
     font-weight: 400;
@@ -91,6 +96,7 @@ nav .cart-icon .cart-item-count{
 .product-collection .price{
     display: block;
     font-weight: bold;
+    margin-top: 5px;
 }
 
 
