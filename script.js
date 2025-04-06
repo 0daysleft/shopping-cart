@@ -155,6 +155,7 @@ function addToCart(product, color, size){
     sessionStorage.setItem("cart", JSON.stringify(cart));
 }
 
+
 function displayCart(){
 
     const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
@@ -164,6 +165,7 @@ function displayCart(){
     const grandTotalE1 = document.querySelector(".grand-total");
 
     //console.log(cart)
+    
 
     cartItemsContainer.innerHTML = "";
 
@@ -177,7 +179,8 @@ function displayCart(){
     let subtotal = 0;
     cart.forEach (
         (item, index) => {
-            const itemTotal = parseFloat(item.price.replace("$", "")) * item.quantity;
+
+            const itemTotal = (parseFloat(item.price.replace("$", "")) * item.quantity);
             subtotal += itemTotal;
 
             const cartItem = document.createElement("div");
@@ -197,13 +200,44 @@ function displayCart(){
                                                 </div>
                                                 <span class="price">${item.price}</span>
                                                 <div class="quantity"><input type="number" name="" id="" value="${item.quantity}" min="1" data-index="${index}"></div>
-                                                <span class="total-price">$100</span>
+                                                <span class="total-price">$${itemTotal}</span>
                                                 <button class="remove" data-index="${index}" ><i class="ri-close-line"></i></button>
                                     `
+            
             cartItemsContainer.append(cartItem)
+                   
         }
     )
 
     subTotalE1.textContent = `$ ${subtotal.toFixed(2)}`;
     grandTotalE1.textContent = `$${subtotal.toFixed(2)}`;
+
+    removeCartItem();
+    updateCartQuantity();
+}
+
+
+function removeCartItem() {
+    document.querySelectorAll(".remove").forEach(button => {
+        button.addEventListener("click", function () {
+            let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+            const index = this.getAttribute("data-index");
+            cart.splice(index, 1);
+            sessionStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        })
+    })
+}
+
+function updateCartQuantity() {
+    document.querySelectorAll(".quantity input").forEach(input => {
+        input.addEventListener("change", function () {
+            let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+            const index = this.getAttribute("data-index");
+            cart[index].quantity = parseInt(this.value);
+            sessionStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        })
+    })
 }
