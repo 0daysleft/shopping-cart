@@ -1,8 +1,12 @@
 
 const productContainer = document.querySelector(".product-list");
+const isProductDetailsPage = document.querySelector(".product-detail")
 
 if(productContainer){
     displayProducts();
+}
+else if(isProductDetailsPage){
+    displayProductDetail();
 }
 
 function displayProducts(){
@@ -34,4 +38,17 @@ function displayProducts(){
         )
         
     });
+}
+
+const displayProductDetail = () => {
+    const productData = JSON.parse(sessionStorage.getItem("selectedProduct"));
+
+    const titleE1 = document.querySelector(".title");
+    const priceE1 = document.querySelector(".price");
+    const descriptionE1 = document.querySelector(".description");
+    const mainImageContainer = document.querySelector(".main-img");
+    const thumbnailContainer = document.querySelector(".thubnail-list");
+    const colorContainer = document.querySelector(".color-options");
+    const sizeContainer = document.querySelector(".size-options");
+    const addToCarBtn = document.querySelector("#add-cart-btn");
 }
