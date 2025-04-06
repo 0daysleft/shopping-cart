@@ -137,6 +137,59 @@ nav .cart-icon .cart-item-count{
     margin-bottom: 8px;
 }
 
+.product-detail .rating{
+    color: #e35f26;
+}
 
+.product-detail .price{
+    display: block;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.product-detail :is(.size-selection, .color-selection){
+    margin: 20px 0;
+}
+
+.product-detail :is(.size-selection p, .color-selection p){
+    margin-bottom: 10px;
+}
+
+.product-detail :is(.size-options, .color-options){
+    display: flex;
+    gap: 10px;
+}
+
+.product-detail .size-options button{
+    width: 45px;
+    height: 45px;
+    background: #f2f2f2;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.product-detail :is(.size-options .selected, .color-options .selected){
+    border-color: #999;
+}
+
+.btn{
+    padding: 12px 50px;
+    background: #222;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.product-detail .product-policy{
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.product-detail .product-policy p{
+    margin: 3px 0;
+}
 
 
