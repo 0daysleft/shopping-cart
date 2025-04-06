@@ -110,7 +110,7 @@ const products = [
         colors: [
             {
                 name: "Green",
-                mainImage: "images/product3_green_1.jpg",
+                mainImage: "images/product4_green_1.jpg",
                 thumbnails:[],
                 sizes: ["S", "M", "L", "XL", "XXL"]
             }
@@ -126,7 +126,7 @@ const products = [
         colors: [
             {
                 name: "Black",
-                mainImage: "images/product3_black_1.jpg",
+                mainImage: "images/product5_black_1.jpg",
                 thumbnails: [],
                 sizes: ["S", "M", "L", "XL", "XXL"]
             }
@@ -143,7 +143,7 @@ const products = [
         colors: [
             {
                 name: "Brown",
-                mainImage: "images/product3_brown_1.jpg",
+                mainImage: "images/product6_brown_1.jpg",
                 thumbnails: [],
                 sizes: ["S", "M", "L", "XL", "XXL"]
             }
@@ -160,7 +160,7 @@ const products = [
         colors : [
             {
                 name: "Blue",
-                mainImage: "images/product3_blue_1.jpg",
+                mainImage: "images/product7_blue_1.jpg",
                 thumbnails: [],
                 sizes: ["S", "M", "L", "XL", "XXL"]
             }
@@ -177,7 +177,7 @@ const products = [
         colors: [
             {
                 name: "Green",
-                mainImage: "images/product3_green_1.jpg",
+                mainImage: "images/product8_green_1.jpg",
                 thumbnails: [],
                 sizes: ["S", "M", "L", "XL", "XXL"]
             }
