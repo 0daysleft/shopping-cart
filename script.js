@@ -156,7 +156,7 @@ function addToCarBtn(product, color, size){
 }
 
 function displayCart(){
-    const cart = JSON.parse(sessionStorage.getItem("cart") || []);
+    const cart = JSON.parse(sessionStorage.getItem("cart" || []));
 
     const cartItemsContainer = document.querySelector(".cart=items");
     const subTotalE1 = document.querySelector(".subtotal");
@@ -183,8 +183,27 @@ function displayCart(){
             cartItem.innerHTML = 
 
                                     `
-                                    
+                                             <div class="cart-item">
+                                                <div class="product">
+                                                    <img src="${item.image}" alt="">
+                                                    <div class="item-detail">
+                                                        <p>${item.title}</p>
+                                                        <div class="size-color-box">
+                                                            <span class="size">${item.size}</span>
+                                                            <span class="color">${item.color}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span class="price">${item.price}</span>
+                                                <div class="quantity"><input type="number" name="" id="" value="${item.quantity}" min="1" data-index="${index}"></div>
+                                                <span class="total-price">$100</span>
+                                                <button class="remove" data-index="${index}" ><i class="ri-close-line"></i></button>
+                                            </div>
                                     `
+            cartItemsContainer.append(cartItem)
         }
     )
+
+    subTotalE1.textContent = `$ ${subtotal.toFixed(2)}`;
+    grandTotalE1.textContent = `$${subtotal.toFixed(2)}`;
 }
