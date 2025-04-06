@@ -71,6 +71,28 @@ nav .cart-icon .cart-item-count{
     gap: 20px;
 }
 
+.product-collection .img-box{
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.product-collection .img-box img{
+    width: 100%;
+    transition: 0.5s;
+}
+
+.product-collection .title{
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.product-collection .price{
+    display: block;
+    font-weight: bold;
+}
+
 
 
 
