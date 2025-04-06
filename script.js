@@ -51,4 +51,29 @@ const displayProductDetail = () => {
     const colorContainer = document.querySelector(".color-options");
     const sizeContainer = document.querySelector(".size-options");
     const addToCarBtn = document.querySelector("#add-cart-btn");
+
+    let selectedColor = productData.colors[0]
+    let selectedSize = seletedColor.sizes[0]
+
+    function updateProductDisplay(colorData){
+        if(!colorData.sizes.includes(selectedSize)){
+            selectedSize = colorData.sizes[0];
+        }
+
+        mainImageContainer.innerHTML = `<img src="${colorData.mainImage}"/>`;
+
+        thumbnailContainer.innerHTML = "";
+
+        const allThumbnails = [colorData.mainImage].concat(colorData.thumbnails.slice(0, 3));
+        allThumbnails.forEach(thumb => {
+            const img = document.createElement("img");
+            img.src = thumb;
+
+            thumbnailContainer.appendChild(img);
+
+            img.addEventListener('click', () => {
+                mainImageContainer.innerHTML = `<img src="${thumb}/>`;
+            })
+        })
+    }
 }
