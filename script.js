@@ -1,6 +1,7 @@
 
 const productContainer = document.querySelector(".product-list");
 const isProductDetailsPage = document.querySelector(".product-detail")
+const isCartPage = document.querySelector(".cart");
 
 function displayProducts(){
     products.forEach(product => {
@@ -125,6 +126,9 @@ if(productContainer){
 else if(isProductDetailsPage){
     displayProductDetail();
 }
+else if(isCartPage){
+    displayCart();
+}
 
 function addToCarBtn(product, color, size){
     let cart = JSON.parse(sessionStorage.getItem("cart") || []);
@@ -149,4 +153,38 @@ function addToCarBtn(product, color, size){
     }
 
     sessionStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function displayCart(){
+    const cart = JSON.parse(sessionStorage.getItem("cart") || []);
+
+    const cartItemsContainer = document.querySelector(".cart=items");
+    const subTotalE1 = document.querySelector(".subtotal");
+    const grandTotalE1 = document.querySelector(".grand-total");
+
+
+    cartItemsContainer.innerHTML = "";
+
+    if(cart.length === 0){
+        cartItemsContainer.innerHTML = `<p> Your Cart Is Empty. </p>`;
+        subTotalE1.textContent = "$0";
+        grandTotalE1.textContent = "$0";
+        return;
+    }
+
+    let subtotal = 0;
+    cart.forEach (
+        (item, index) => {
+            const itemTotal = parseFloat(item.price.replace("$", "")) * item.quantity;
+            subtotal += itemTotal;
+
+            const cartItem = document.createElement("div");
+            cartItem.classList.add("cart-item");
+            cartItem.innerHTML = 
+
+                                    `
+                                    
+                                    `
+        }
+    )
 }
