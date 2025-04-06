@@ -213,8 +213,8 @@ function displayCart(){
         }
     )
 
-    subTotalE1.textContent = `$ ${subtotal.toFixed(2)}`;
-    grandTotalE1.textContent = `$${subtotal.toFixed(2)}`;
+    subTotalE1.textContent = `$ ${Number(subtotal.toFixed(2)).toLocaleString()}`;
+    grandTotalE1.textContent = `$${Number(subtotal.toFixed(2)).toLocaleString()}`;
 
     removeCartItem();
     updateCartQuantity();
