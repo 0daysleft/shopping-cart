@@ -238,4 +238,43 @@ nav .cart-icon .cart-item-count{
 
 .cart-item img{
     width: 80px;
+    margin-right: 15px;
+}
+
+.cart-item .size-color-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cart-item .size{
+    padding: 6px 12px;
+    background: #f2f2f2;
+    font-size: 14px;
+}
+
+.cart-item :is(.price, .quantity, .total-price){
+    flex: 1;
+    text-align: center;
+}
+
+.cart-item .quantity input{
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    text-align: center;
+}
+
+.cart-item .remove{
+    background: transparent;
+    border: none;
+    flex: 1;
+}
+
+.cart-item.remove i{
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
 }
