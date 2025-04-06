@@ -131,8 +131,6 @@ nav .cart-icon .cart-item-count{
     cursor: pointer;
 }
 
-
-
 .product-detail .title{
     font-weight: 600;
     line-height: 1;
@@ -149,12 +147,6 @@ nav .cart-icon .cart-item-count{
     font-weight: 600;
     margin: 20px 0;
 }
-
-.product-detail .color-selection img {
-    width: 20%;
-}
-
-
 
 .product-detail :is(.size-selection, .color-selection){
     margin: 20px 0;
@@ -176,6 +168,14 @@ nav .cart-icon .cart-item-count{
     border: 2px solid transparent;
     cursor: pointer;
 }
+
+.product-detail .color-options img{
+    width: 75px;
+    height: 75px;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
 
 .product-detail :is(.size-options .selected, .color-options .selected){
     border-color: #999;
