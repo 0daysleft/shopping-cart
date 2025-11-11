@@ -216,6 +216,7 @@ nav .cart-icon .cart-item-count{
     text-decoration:none;
     margin:12px 0;
     font-size:15px;
+    cursor: not-allowed;
 }
 
 /* Cart Section */
