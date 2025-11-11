@@ -200,6 +200,24 @@ nav .cart-icon .cart-item-count{
     margin: 3px 0;
 }
 
+/* Footer Section */
+.items-sections{
+    display:block;
+    color:#000000;
+    text-decoration:none;
+    margin:12px 0;
+    font-size:15px;
+    transition:all 0.3s
+}
+
+.nav-links{
+    display:block;
+    color:#000000;
+    text-decoration:none;
+    margin:12px 0;
+    font-size:15px;
+}
+
 /* Cart Section */
 
 .cart{
